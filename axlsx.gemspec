@@ -18,6 +18,8 @@ Gem::Specification.new do |s|
   s.files = Dir.glob("{lib/**/*,examples/**/*}") + %w{ LICENSE README.md Rakefile CHANGELOG.md .yardopts }
   s.test_files  = Dir.glob("{test/**/*}")
 
+  s.add_runtime_dependency 'zip-zip'
+
 # REQUIRED by Travis-ci please do not alter these lines
   s.add_runtime_dependency 'rake', '0.8.7'  if RUBY_VERSION == "1.9.2"
   s.add_runtime_dependency 'rake', '>= 0.8.7' unless RUBY_VERSION == "1.9.2"
