@@ -108,7 +108,7 @@ module Axlsx
     # @return [StringIO|Boolean] False if confirm_valid and validation errors exist. rewound string IO if not.
     def to_stream(confirm_valid=false)
       return false unless !confirm_valid || self.validate.empty?
-      zip = write_parts(Zip::ZipOutputStream.new("streamed", true))
+      zip = write_parts(Zip::ZipOutputStream.new(StringIO.new, true))
       stream = zip.close_buffer
       stream.rewind
       stream
